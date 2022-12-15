@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Product>
+
+@{
+    ViewBag.Title = "Список продуктов";
+}
+
+<a href="~/Product/Create/">Создать продукт</a>
+<table class="itemlist">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var product in Model)
+    {
+        <tr>
+            <td>@product.Id</td>
+            <td>@product.Name</td>
+            <td>@product.Description</td>
+            <td>@product.Price</td>
+            <td><a href="~/Product/Edit/@product.Id">Редактировать</a></td>
+            <td><a href="~/Product/Delete/@product.Id">Удалить</a></td>
+        </tr>
+    }
+    </tbody>
+    
+</table>

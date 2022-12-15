@@ -1,0 +1,33 @@
+﻿@model Product
+
+@{
+    ViewData["Title"] = "Редактирование продукта";
+}
+
+<div class="modelform">
+    <form asp-action="Edit" asp-controller="Product">
+        <div asp-validation-summary="ModelOnly"></div>
+        
+        <div class="modelform__item">
+            <label class="modelitem__label" asp-for="Name"></label>
+            <input class="modelitem__input" asp-for="Name"/>
+            <span class="modelitem__warning" asp-validation-for="Name"></span>
+        </div>
+        
+        <div class="modelform__item">
+            <label class="modelitem__label" asp-for="Description"></label>
+            <input class="modelitem__input" asp-for="Description"/>
+            <span class="modelitem__warning" asp-validation-for="Description"></span>
+        </div>
+        
+        <div class="modelform__item">
+            <label class="modelitem__label" asp-for="Price"></label>
+            <input class="modelitem__input" asp-for="Price"/>
+            <span class="modelitem__warning" asp-validation-for="Price"></span>
+        </div>
+        <div class="form-group">
+            <input class="modelform__button" type="submit" value="Сохранить"/>
+        </div>
+    </form>
+    <a asp-action="Index">Вернуться назад</a>
+</div>

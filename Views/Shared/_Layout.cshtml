@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <link href="@Url.Content("~/css/site.css")" rel="stylesheet" type="text/css" />
+    </head>
+<body>
+    <div class="header">
+        <h1 class="header__title">@ViewBag.Title</h1>
+        <nav class="header__nav">
+            <a href="~/Product/Index" class="nav__link">Products</a>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <a href="~/Account/Logout" class="nav__link">Logout</a>
+            }
+
+        </nav>
+    </div>
+    <div class="container">
+        @RenderBody()
+    </div>
+</body>
+</html>

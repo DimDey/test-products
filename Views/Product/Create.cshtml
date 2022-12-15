@@ -1,0 +1,30 @@
+﻿@model Product
+
+@{
+    ViewData["Title"] = "Создать продукт";
+}
+
+<div class="modelform">
+    <form asp-action="Create" method="post">
+        <div asp-validation-summary="ModelOnly"></div>
+        <div class="modelform__item">
+            <label class="modelitem__label" asp-for="Name"></label>
+            <input class="modelitem__input" asp-for="Name"/>
+            <span class="modelitem__warning" asp-validation-for="Name"></span>
+        </div>
+        
+        <div class="modelform__item">
+            <label class="modelitem__label" asp-for="Description"></label>
+            <input class="modelitem__input" asp-for="Description"/>
+            <span class="modelitem__warning" asp-validation-for="Description"></span>
+        </div>
+        
+        <div class="modelform__item">
+            <label class="modelitem__label" asp-for="Price"></label>
+            <input class="modelitem__input" asp-for="Price"/>
+            <span class="modelitem__warning" asp-validation-for="Price"></span>
+        </div>
+        
+        <input class="modelform__button" type="submit" value="Create" />
+    </form>
+</div>

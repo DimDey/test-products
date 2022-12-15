@@ -1,0 +1,24 @@
+﻿@model LoginViewModel
+
+@{
+    ViewBag.Title = "Авторизация";
+}
+
+<div class="modelform">
+    <form asp-action="Login" method="post">
+        <div class="modelitem__warning" asp-validation-summary="ModelOnly"></div>
+        <div class="modelform__item">
+            <label class="modelitem__label" asp-for="UserName"></label>
+            <input class="modelitem__input" asp-for="UserName"/>
+            <span class="modelitem__warning" asp-validation-for="UserName"></span>
+        </div>
+        
+        <div class="modelform__item">
+            <label class="modelitem__label" asp-for="Password"></label>
+            <input class="modelitem__input" asp-for="Password"/>
+            <span class="modelitem__warning" asp-validation-for="Password"></span>
+        </div>
+
+        <input class="modelform__button" type="submit" value="Create" />
+    </form>
+</div>
